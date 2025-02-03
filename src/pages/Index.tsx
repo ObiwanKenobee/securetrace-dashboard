@@ -1,7 +1,8 @@
-import { Shield, Plane, Box, AlertTriangle, Brain, Rocket, Database, Lock, Signal, ChartBar } from "lucide-react";
+import { Shield, Plane, Box, AlertTriangle, Brain, Rocket, Database, Lock, Signal, ChartBar, Tool, Package, Globe, Cpu } from "lucide-react";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { MetricCard } from "@/components/MetricCard";
 import { ThreatAlert } from "@/components/ThreatAlert";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Index = () => {
   return (
@@ -9,26 +10,27 @@ const Index = () => {
       <DashboardSidebar />
       
       <main className="flex-1 p-8 overflow-auto">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto space-y-8">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Defense & Aerospace Dashboard</h1>
-            <p className="text-gray-400">Real-time monitoring and analytics for aerospace, defense, and cybersecurity</p>
+            <h1 className="text-3xl font-bold mb-2">Guardian-IO Command Center</h1>
+            <p className="text-gray-400">Advanced monitoring and analytics for aerospace, defense, and cybersecurity operations</p>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {/* Key Metrics Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <MetricCard
-              title="Active Threats"
-              value="12"
-              icon={<Shield className="w-6 h-6" />}
+              title="AI Systems Performance"
+              value="98.2%"
+              icon={<Brain className="w-6 h-6" />}
               trend="up"
-              trendValue="+3 from yesterday"
+              trendValue="+0.5% accuracy"
             />
             <MetricCard
-              title="Aircraft Status"
+              title="Maintenance Forecast"
               value="86%"
-              icon={<Plane className="w-6 h-6" />}
+              icon={<Tool className="w-6 h-6" />}
               trend="down"
-              trendValue="-2% operational"
+              trendValue="3 alerts pending"
             />
             <MetricCard
               title="Supply Chain Health"
@@ -38,11 +40,18 @@ const Index = () => {
               trendValue="+5% efficiency"
             />
             <MetricCard
-              title="AI Systems"
-              value="98.2%"
-              icon={<Brain className="w-6 h-6" />}
+              title="Active Threats"
+              value="12"
+              icon={<Shield className="w-6 h-6" />}
               trend="up"
-              trendValue="+0.5% accuracy"
+              trendValue="+3 from yesterday"
+            />
+            <MetricCard
+              title="Parts Traceability"
+              value="99.9%"
+              icon={<Package className="w-6 h-6" />}
+              trend="up"
+              trendValue="All parts verified"
             />
             <MetricCard
               title="Space Operations"
@@ -53,14 +62,22 @@ const Index = () => {
             />
             <MetricCard
               title="Blockchain Security"
-              value="99.9%"
+              value="100%"
               icon={<Database className="w-6 h-6" />}
+              trend="stable"
+              trendValue="Fully operational"
+            />
+            <MetricCard
+              title="AI Ethics Compliance"
+              value="97%"
+              icon={<Cpu className="w-6 h-6" />}
               trend="up"
-              trendValue="+0.1% integrity"
+              trendValue="+2% this month"
             />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Threat Monitoring Section */}
             <section className="bg-steel-dark p-6 rounded-lg">
               <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-cyber" />
@@ -90,6 +107,7 @@ const Index = () => {
               </div>
             </section>
 
+            {/* System Status Section */}
             <section className="bg-steel-dark p-6 rounded-lg">
               <h2 className="text-xl font-bold mb-4">System Status</h2>
               <div className="space-y-4">
@@ -106,17 +124,17 @@ const Index = () => {
                 <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
                   <div className="flex items-center gap-2">
                     <Brain className="w-4 h-4 text-cyber" />
-                    <span>AI Analytics</span>
+                    <span>AI Analytics Engine</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
-                    <span className="text-cyber">Active</span>
+                    <span className="text-cyber">Processing</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
                   <div className="flex items-center gap-2">
                     <Signal className="w-4 h-4 text-cyber" />
-                    <span>Satellite Network</span>
+                    <span>IoT Sensor Network</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
@@ -125,12 +143,12 @@ const Index = () => {
                 </div>
                 <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
                   <div className="flex items-center gap-2">
-                    <ChartBar className="w-4 h-4 text-cyber" />
-                    <span>Predictive Analytics</span>
+                    <Globe className="w-4 h-4 text-cyber" />
+                    <span>Global Defense Network</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
-                    <span className="text-cyber">Processing</span>
+                    <span className="text-cyber">Secure</span>
                   </div>
                 </div>
               </div>

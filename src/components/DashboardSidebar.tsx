@@ -1,6 +1,7 @@
 import { 
   Home, Shield, Plane, Database, AlertTriangle, Settings, 
-  Rocket, Brain, Factory, Box, LineChart, Search
+  Rocket, Brain, Tool, Package, LineChart, Search,
+  Globe, Lock, Cpu
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -11,8 +12,8 @@ const menuItems = [
     label: "Aircraft & MRO", 
     href: "/aircraft",
     subItems: [
-      { label: "Maintenance Forecasting", href: "/aircraft/maintenance" },
-      { label: "Parts Traceability", href: "/aircraft/parts" }
+      { label: "Maintenance Forecasting", href: "/aircraft/maintenance", icon: Tool },
+      { label: "Parts Traceability", href: "/aircraft/parts", icon: Package }
     ]
   },
   { 
@@ -20,17 +21,17 @@ const menuItems = [
     label: "Defense & Supply", 
     href: "/defense",
     subItems: [
-      { label: "AI Logistics", href: "/defense/logistics" },
-      { label: "Inventory Management", href: "/defense/inventory" }
+      { label: "AI Logistics", href: "/defense/logistics", icon: Brain },
+      { label: "Inventory Management", href: "/defense/inventory", icon: Database }
     ]
   },
   { 
-    icon: Brain, 
-    label: "Cybersecurity & AI", 
+    icon: Lock, 
+    label: "Cybersecurity", 
     href: "/cyber",
     subItems: [
-      { label: "Fraud Detection", href: "/cyber/fraud" },
-      { label: "Contract Management", href: "/cyber/contracts" }
+      { label: "Threat Detection", href: "/cyber/threats", icon: AlertTriangle },
+      { label: "AI Ethics", href: "/cyber/ethics", icon: Cpu }
     ]
   },
   { 
@@ -38,12 +39,12 @@ const menuItems = [
     label: "Space Industry", 
     href: "/space",
     subItems: [
-      { label: "Carbon Tracking", href: "/space/carbon" },
-      { label: "Resource Management", href: "/space/resources" }
+      { label: "Mission Control", href: "/space/missions", icon: Globe },
+      { label: "Resource Management", href: "/space/resources", icon: Database }
     ]
   },
   { icon: LineChart, label: "Analytics", href: "/analytics" },
-  { icon: AlertTriangle, label: "Threats", href: "/threats" },
+  { icon: Search, label: "Research", href: "/research" },
   { icon: Settings, label: "Settings", href: "/settings" }
 ];
 
@@ -74,9 +75,10 @@ export const DashboardSidebar = ({ className }: { className?: string }) => {
                     <li key={subItem.label}>
                       <a
                         href={subItem.href}
-                        className="block px-4 py-2 text-sm text-gray-400 hover:text-gray-300 hover:bg-steel/50 rounded-lg transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-gray-300 hover:bg-steel/50 rounded-lg transition-colors"
                       >
-                        {subItem.label}
+                        <subItem.icon className="w-4 h-4" />
+                        <span>{subItem.label}</span>
                       </a>
                     </li>
                   ))}
