@@ -1,4 +1,4 @@
-import { Shield, Plane, Box, AlertTriangle } from "lucide-react";
+import { Shield, Plane, Box, AlertTriangle, Brain, Rocket } from "lucide-react";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { MetricCard } from "@/components/MetricCard";
 import { ThreatAlert } from "@/components/ThreatAlert";
@@ -37,6 +37,27 @@ const Index = () => {
               trend="up"
               trendValue="+5% efficiency"
             />
+            <MetricCard
+              title="AI Systems"
+              value="98.2%"
+              icon={<Brain className="w-6 h-6" />}
+              trend="up"
+              trendValue="+0.5% accuracy"
+            />
+            <MetricCard
+              title="Space Operations"
+              value="7"
+              icon={<Rocket className="w-6 h-6" />}
+              trend="up"
+              trendValue="+2 missions"
+            />
+            <MetricCard
+              title="Compliance Score"
+              value="95%"
+              icon={<Shield className="w-6 h-6" />}
+              trend="up"
+              trendValue="+3% this month"
+            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -57,6 +78,11 @@ const Index = () => {
                   timestamp="15 minutes ago"
                 />
                 <ThreatAlert
+                  level="medium"
+                  message="AI system performance degradation in Sector 7"
+                  timestamp="45 minutes ago"
+                />
+                <ThreatAlert
                   level="low"
                   message="Routine maintenance required for Aircraft A-137"
                   timestamp="1 hour ago"
@@ -70,21 +96,28 @@ const Index = () => {
                 <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
                   <span>Network Security</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse-slow" />
+                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
                     <span className="text-cyber">Active</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
-                  <span>Supply Chain Monitoring</span>
+                  <span>AI Analytics</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse-slow" />
+                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
                     <span className="text-cyber">Active</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
-                  <span>Threat Detection</span>
+                  <span>Blockchain Verification</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse-slow" />
+                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
+                    <span className="text-cyber">Active</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-steel rounded-lg">
+                  <span>Space Operations</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
                     <span className="text-cyber">Active</span>
                   </div>
                 </div>
