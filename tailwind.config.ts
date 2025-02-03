@@ -19,6 +19,7 @@ export default {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
         // Custom colors for the aerospace theme
         navy: {
           DEFAULT: "#0A2647",
