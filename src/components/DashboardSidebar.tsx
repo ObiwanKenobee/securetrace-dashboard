@@ -1,6 +1,6 @@
 import { 
   Home, Shield, Plane, Database, AlertTriangle, Settings, 
-  Rocket, Brain, Tool, Package, LineChart, Search,
+  Rocket, Brain, Wrench, Package, LineChart, Search,
   Globe, Lock, Cpu
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ const menuItems = [
     label: "Aircraft & MRO", 
     href: "/aircraft",
     subItems: [
-      { label: "Maintenance Forecasting", href: "/aircraft/maintenance", icon: Tool },
+      { label: "Maintenance Forecasting", href: "/aircraft/maintenance", icon: Wrench },
       { label: "Parts Traceability", href: "/aircraft/parts", icon: Package }
     ]
   },

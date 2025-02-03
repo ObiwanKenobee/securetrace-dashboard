@@ -1,4 +1,4 @@
-import { Shield, Plane, Box, AlertTriangle, Brain, Rocket, Database, Lock, Signal, ChartBar, Tool, Package, Globe, Cpu } from "lucide-react";
+import { Shield, Plane, Box, AlertTriangle, Brain, Rocket, Database, Lock, Signal, ChartBar, Wrench, Package, Globe, Cpu } from "lucide-react";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { MetricCard } from "@/components/MetricCard";
 import { ThreatAlert } from "@/components/ThreatAlert";
@@ -28,7 +28,7 @@ const Index = () => {
             <MetricCard
               title="Maintenance Forecast"
               value="86%"
-              icon={<Tool className="w-6 h-6" />}
+              icon={<Wrench className="w-6 h-6" />}
               trend="down"
               trendValue="3 alerts pending"
             />
@@ -64,7 +64,7 @@ const Index = () => {
               title="Blockchain Security"
               value="100%"
               icon={<Database className="w-6 h-6" />}
-              trend="stable"
+              trend="up"
               trendValue="Fully operational"
             />
             <MetricCard
