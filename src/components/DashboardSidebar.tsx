@@ -4,100 +4,50 @@ import {
   Globe, Lock, Cpu
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-const menuItems = [
-  { icon: Home, label: "Overview", href: "/" },
-  { 
-    icon: Plane, 
-    label: "Aircraft & MRO", 
-    href: "/aircraft",
-    subItems: [
-      { label: "Maintenance Forecasting", href: "/aircraft/maintenance", icon: Wrench },
-      { label: "Parts Traceability", href: "/aircraft/parts", icon: Package }
-    ]
-  },
-  { 
-    icon: Shield, 
-    label: "Defense & Supply", 
-    href: "/defense",
-    subItems: [
-      { label: "AI Logistics", href: "/defense/logistics", icon: Brain },
-      { label: "Inventory Management", href: "/defense/inventory", icon: Database }
-    ]
-  },
-  { 
-    icon: Lock, 
-    label: "Cybersecurity", 
-    href: "/cyber",
-    subItems: [
-      { label: "Threat Detection", href: "/cyber/threats", icon: AlertTriangle },
-      { label: "AI Ethics", href: "/cyber/ethics", icon: Cpu }
-    ]
-  },
-  { 
-    icon: Rocket, 
-    label: "Space Industry", 
-    href: "/space",
-    subItems: [
-      { label: "Mission Control", href: "/space/missions", icon: Globe },
-      { label: "Resource Management", href: "/space/resources", icon: Database }
-    ]
-  },
-  { icon: LineChart, label: "Analytics", href: "/analytics" },
-  { icon: Search, label: "Research", href: "/research" },
-  { icon: Settings, label: "Settings", href: "/settings" }
-];
-
-export const DashboardSidebar = ({ className }: { className?: string }) => {
+export function DashboardSidebar() {
   return (
-    <div className={cn("w-64 bg-steel-dark p-4 flex flex-col h-screen", className)}>
-      <div className="flex items-center gap-2 mb-8 px-2">
-        <Shield className="w-8 h-8 text-cyber" />
-        <h1 className="text-xl font-bold text-white">Guardian-IO</h1>
+    <div className="hidden lg:block border-r bg-steel-dark w-[240px] p-6">
+      <div className="flex items-center gap-2 mb-8">
+        <Shield className="w-6 h-6 text-cyber" />
+        <span className="font-bold text-lg">Guardian-IO</span>
       </div>
-      
-      <nav className="flex-1 overflow-y-auto">
-        <ul className="space-y-1">
-          {menuItems.map((item) => (
-            <li key={item.label}>
-              <div className="mb-1">
-                <a
-                  href={item.href}
-                  className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-steel rounded-lg transition-colors"
-                >
-                  <item.icon className="w-5 h-5" />
-                  <span>{item.label}</span>
-                </a>
-              </div>
-              {item.subItems && (
-                <ul className="ml-9 space-y-1">
-                  {item.subItems.map((subItem) => (
-                    <li key={subItem.label}>
-                      <a
-                        href={subItem.href}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-gray-300 hover:bg-steel/50 rounded-lg transition-colors"
-                      >
-                        <subItem.icon className="w-4 h-4" />
-                        <span>{subItem.label}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      
-      <div className="mt-auto p-4 bg-navy rounded-lg space-y-2">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-cyber rounded-full animate-pulse" />
-          <span className="text-sm text-gray-300">System Status: Active</span>
+      <ScrollArea className="h-[calc(100vh-120px)]">
+        <div className="space-y-1">
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Home className="w-4 h-4" /> Dashboard
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Plane className="w-4 h-4" /> Aircraft
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Wrench className="w-4 h-4" /> Maintenance
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Package className="w-4 h-4" /> Parts
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Shield className="w-4 h-4" /> Defense
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Brain className="w-4 h-4" /> AI & Ethics
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Rocket className="w-4 h-4" /> Space
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <LineChart className="w-4 h-4" /> Analytics
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Search className="w-4 h-4" /> Research
+          </Button>
+          <Button variant="ghost" className="w-full justify-start gap-2">
+            <Settings className="w-4 h-4" /> Settings
+          </Button>
         </div>
-        <div className="text-xs text-gray-400">
-          Last scan: 2 minutes ago
-        </div>
-      </div>
+      </ScrollArea>
     </div>
   );
-};
+}
